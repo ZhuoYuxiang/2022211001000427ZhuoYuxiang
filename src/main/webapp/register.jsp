@@ -5,77 +5,85 @@
   Time: 22:00
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <title>User Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#registerForm').submit(function(event) {
-                var username = $('#username').val();
-                var password = $('#password').val();
-                var email = $('#email').val();
-                var birthdate = $('#birthdate').val();
+        $(document).ready(function(){
+            $("#registrationForm").submit(function(event){
                 var isValid = true;
+                $(".error").remove();
 
-                // Username validation
-                if (username.trim() == '') {
-                    $('#username').next().remove();
-                    $('#username').after('<span class="error">Username is required.</span>');
+                // Username validation1
+                var username = $("#username").val();
+                if(username == ""){
+                    $("#username").after("<span class='error'>Username is required</span>");
                     isValid = false;
-                } else {
-                    $('#username').next().remove();
                 }
 
                 // Password validation
-                if (password.length < 8) {
-                    $('#password').next().remove();
-                    $('#password').after('<span class="error">Password must be at least 8 characters long.</span>');
+                var password = $("#password").val();
+                if(password == ""){
+                    $("#password").after("<span class='error'>Password is required</span>");
                     isValid = false;
-                } else {
-                    $('#password').next().remove();
+                } else if(password.length < 8){
+                    $("#password").after("<span class='error'>Password must be at least 8 characters long</span>");
+                    isValid = false;
                 }
 
                 // Email validation
-                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailPattern.test(email)) {
-                    $('#email').next().remove();
-                    $('#email').after('<span class="error">Invalid email address.</span>');
+                var email = $("#email").val();
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if(email == ""){
+                    $("#email").after("<span class='error'>Email is required</span>");
                     isValid = false;
-                } else {
-                    $('#email').next().remove();
+                } else if(!emailRegex.test(email)){
+                    $("#email").after("<span class='error'>Invalid email address</span>");
+                    isValid = false;
                 }
 
                 // Birthdate validation
-                var datePattern = /^\d{4}-\d{2}-\d{2}$/;
-                if (!datePattern.test(birthdate)) {
-                    $('#birthdate').next().remove();
-                    $('#birthdate').after('<span class="error">Invalid date format (yyyy-mm-dd).</span>');
+                var birthdate = $("#birthdate").val();
+                var birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
+                if(birthdate == ""){
+                    $("#birthdate").after("<span class='error'>Birthdate is required</span>");
                     isValid = false;
-                } else {
-                    $('#birthdate').next().remove();
+                } else if(!birthdateRegex.test(birthdate)){
+                    $("#birthdate").after("<span class='error'>Invalid date format (yyyy-dd-mm)</span>");
+                    isValid = false;
                 }
 
-                if (!isValid) {
-                    event.preventDefault(); // Prevent form submission if there are errors
+                if(!isValid){
+                    event.preventDefault(); // Prevent form submission if there are errors1
                 }
             });
         });
     </script>
 </head>
 <body>
-<h1>User Registration</h1>
-<!-- register.jsp -->
-<form id="registerForm" action="processRegistration.jsp" method="post">
-    <!-- register.jsp -->
-    Username: <input type="text" id="username" name="username" required><br>
-    Password: <input type="password" id="password" name="password" required minlength="8"><br>
-    Gender:
-    <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label><br>
-    Email: <input type="email" id="email" name="email" required><br>
-    Birthdate: <input type="text" id="birthdate" name="birthdate" placeholder="yyyy-mm-dd" required><br>
-    <input type="submit" value="Submit">
+<h2>User Registration</h2>
+<form id="registrationForm" action="submit_registration.jsp" method="post">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+    </div>
+    <div>
+        <label for="birthdate">Birthdate:</label>
+        <input type="text" id="birthdate" name="birthdate">
+    </div>
+    <div>
+        <input type="submit" value="Register">
+    </div>
+</form>
 </body>
 </html>
