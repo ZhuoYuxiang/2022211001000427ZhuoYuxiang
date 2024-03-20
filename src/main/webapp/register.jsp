@@ -3,7 +3,7 @@
   User: xiang
   Date: 2024/3/13
   Time: 22:00
-  To change this template use File | Settings | File Templates.
+  To change this template use File | Settings    | File Templates.
 --%>
 <!DOCTYPE html>
 <html>
@@ -44,6 +44,8 @@
                     isValid = false;
                 }
 
+
+
                 // Birthdate validation
                 var birthdate = $("#birthdate").val();
                 var birthdateRegex = /^\d{4}-\d{2}-\d{2}$/;
@@ -64,7 +66,7 @@
 </head>
 <body>
 <h2>User Registration</h2>
-<form id="registrationForm" action="submit_registration.jsp" method="post">
+<form id="registrationForm" action="register" method="post">
     <div>
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
