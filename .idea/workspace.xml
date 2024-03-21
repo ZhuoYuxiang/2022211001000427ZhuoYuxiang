@@ -9,9 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dae63160-a818-4f73-9321-0e987af6e7a8" name="更改" comment="HM Week2 Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="dae63160-a818-4f73-9321-0e987af6e7a8" name="更改" comment="HM Week2 Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -247,6 +245,7 @@
       <workItem from="1710931910393" duration="493000" />
       <workItem from="1710948695449" duration="1377000" />
       <workItem from="1711011632759" duration="52000" />
+      <workItem from="1711019104133" duration="357000" />
     </task>
     <task id="LOCAL-00001" summary="HM Week2 Commit">
       <option name="closed" value="true" />
@@ -384,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710929213041</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="HM Week2 Commit">
+      <option name="closed" value="true" />
+      <created>1711019446038</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1711019446038</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
