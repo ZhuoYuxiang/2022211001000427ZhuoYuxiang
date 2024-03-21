@@ -3,32 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>anyName</servlet-name>
-        <servlet-class>com.ZhuoYuxiang.week2.demo.HelloWorldServlet</servlet-class><!--package +name of servlet class -->
-    </servlet>
-    <servlet>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <servlet-class>com.ZhuoYuxiang.week3.demo.LifeCycleServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>RegisterServlet</servlet-name>
-        <servlet-class>com.ZhuoYuxiang.week3.demo.RegisterServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>anyName</servlet-name>
-        <url-pattern>/hello</url-pattern><!-- url must start with / -->
-    </servlet-mapping>
-    <!-- x=5,x=a so we can see a=5
-    so /hello=com.ZhuoYuxiang.week2.demo.HelloWorldServlet
-    -->
-    <servlet-mapping>
-        <servlet-name>LifeCycleServlet</servlet-name>
-        <url-pattern>/life</url-pattern>
-        <!--/life ==LifeCycleServlet== com.ZhuoYuxiang.week3.demo.LifeServlet-->
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/register</url-pattern>
-    </servlet-mapping>
+
+    <!-- 定义数据库连接相关的上下文参数 -->
+    <context-param>
+        <param-name>jdbc.driver</param-name>
+        <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
+    </context-param>
+    <context-param>
+        <param-name>jdbc.url</param-name>
+        <param-value>jdbc:sqlserver://localhost:1433;databaseName=userdb;encrypt=true;trustServerCertificate=true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>jdbc.username</param-name>
+        <param-value>sa</param-value>
+    </context-param>
+    <context-param>
+        <param-name>jdbc.password</param-name>
+        <param-value>zyx345xyz</param-value>
+    </context-param>
+
+    <!-- Tomcat DataSource配置（仅用于参考，具体配置根据实际情况调整） -->
+    <resource-ref>
+        <description>User Database</description>
+        <res-ref-name>jdbc/UserDatabase</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+    <!-- 数据源配置在Tomcat的context.xml或server.xml中完成，这里不再赘述 -->
 </web-app>

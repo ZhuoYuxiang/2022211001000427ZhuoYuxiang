@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=<%=request.getContextPath()%>/">
+    <title>注册成功</title>
+    <style>
+        body {
+            text-align: center;
+            padding-top: 50px;
+        }
+        .success-message {
+            font-size: 1.5em;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div class="success-message">
+    <h1>恭喜！您的注册已成功。</h1>
+    <p>系统将在3秒后自动跳转回首页，如未能跳转，请<a href="<%=request.getContextPath()%>/">点击这里</a>返回。</p>
+</div>
+</body>
+</html>
