@@ -22,19 +22,19 @@ public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-             String Username =request.getParameter( "username");
-             String password =request.getParameter( "password");
-             String email =request.getParameter( "email");
-             String gender =request.getParameter( "gender");
-             String birthdate =request.getParameter( "birthdate");
+        String Username =request.getParameter( "username");
+        String password =request.getParameter( "password");
+        String email =request.getParameter( "email");
+        String gender =request.getParameter( "gender");
+        String birthdate =request.getParameter( "birthdate");
 
-               //print - write into response
+        //print - write into response
         PrintWriter writer = response.getWriter();
-        writer.println("<br>username "+Username);
-        writer.println("<br>password "+password);
-        writer.println("<br>email "+email);
-        writer.println("<br>gender "+gender);
-        writer.println("<br>birthdate "+birthdate);
+        writer.println("<br> username "+Username);
+        writer.println("<br> password "+password);
+        writer.println("<br> email "+email);
+        writer.println("<br> gender "+gender);
+        writer.println("<br> birthdate "+birthdate);
         writer.close();
 
 
